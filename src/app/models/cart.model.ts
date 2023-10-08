@@ -1,5 +1,5 @@
 export interface Cart{
-    items: Array<CartItem>
+    items: Array<CartItem>;
 }
 
 export interface CartItem{

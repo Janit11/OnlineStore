@@ -5,25 +5,13 @@ import { Product } from 'src/app/models/product.models';
   selector: 'app-product-box',
   templateUrl: './product-box.component.html', 
 })
-export class ProductBoxComponent implements OnInit {
+export class ProductBoxComponent{
 
   @Input() fullWidthMode = false;
-  product: Product | undefined ={
-    id: 1,
-    title: 'hoodies',
-    price: 150,
-    category: 'clothes',
-    description: 'Description',
-    image: 'https://via.placeholder.com/150'
-  };
-
+  @Input() product: Product | undefined;
   @Output() addToCart = new EventEmitter();
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
   onAddtoCart(): void{
     this.addToCart.emit(this.product);
   }
